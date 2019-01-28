@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RegistrationForm from './form';
-import submitRegistration from '../api/registration';
+import { submitRegistration } from '../api/registration';
 import { connect } from 'react-redux';
 import { registrationRequest, registrationSuccess} from './action'
 // import { }
@@ -29,9 +29,12 @@ class SignUp extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        const {first_name, last_name, email, password, confirm_password, referral_code} = this.state.data;
+        console.log('etanipugyo')
+        const {first_name, last_name, email, password, referral_code} = this.state.data;
         const errors = this.validate();
         this.register(this.state.data);
+        submitRegistration( first_name, last_name, email, password, referral_code)
+
     }
 
     validate = () => {
@@ -45,8 +48,6 @@ class SignUp extends Component {
         this.ValidateEmail();
         if(!data.password) errors.password = "Field is empty";
         this.ValidatePassword();
-        if(!data.confirm_password) errors.confirm_password = "Field is empty";
-        this.CheckPassword();
         if(!data.referral_code) errors.referral_code = "Field is empty";
         return errors;
     };

@@ -9,7 +9,6 @@ const initialState = ({
     last_name: '',
     email: '',
     password: '',
-    confirm_password: '',
     referral_code: ''
 });
 
@@ -25,7 +24,6 @@ function registerReducer (state = initialState, action){
                 last_name: '',
                 email: '',
                 password: '',
-                confirm_password: '',
                 referral_code: ''
             });
             
@@ -39,7 +37,6 @@ function registerReducer (state = initialState, action){
                 last_name: 'last_name',
                 email: 'email',
                 password: 'password',
-                confirm_password: 'confirm_password',
                 referral_code: 'referral_code'
             };
             return newState;

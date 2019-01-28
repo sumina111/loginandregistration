@@ -1,4 +1,4 @@
-function submitRegistration(registration) {
+export const submitRegistration = (registration) => {
     console.log('asdasd');
 
     return fetch("http://www.xclassets.com/api/customer",
@@ -24,5 +24,3 @@ function submitRegistration(registration) {
             });
         
 }
-
-export default submitRegistration
